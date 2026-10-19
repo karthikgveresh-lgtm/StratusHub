@@ -10,7 +10,7 @@ export default function ResourcePieChart() {
                 <p className="text-xs text-slate-400">Resource load distribution by architectural tier.</p>
             </div>
 
-            <div className="flex-1 w-full h-[260px] flex items-center justify-center">
+            <div className="w-full h-64 mt-4 flex items-center justify-center">
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <Pie
