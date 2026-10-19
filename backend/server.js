@@ -14,6 +14,15 @@ const PORT = process.env.PORT || 5000;
 // Create standard HTTP server wrapping our Express instance
 const server = http.createServer(app);
 
+
+// 1. UPGRADE THIS MIDDELWARE LAYER: Configure strict cross-origin allowances
+app.use(cors({
+    origin: "http://localhost:5173", // Grants direct access rights to your partner's local Vite server
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-tenant-id"] // Allows your custom multi-tenant header parameters
+}));
+
 // Initialize Socket.io Server instance configuration details
 const io = new Server(server, {
     cors: {
